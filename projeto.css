@@ -484,3 +484,95 @@ button {
   transition: background-color 0.3s ease;
 }
 
+footer {
+  background-color: #34495e; /* azul acinzentado escuro */
+  color: #d0d7de; /* cinza claro */
+  padding: 15px 20px;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
+}
+
+footer p {
+  margin: 0 0 10px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+footer h3, footer h4 {
+  margin: 15px 0 8px;
+  font-weight: 600;
+  color: #7f8fa4; /* azul cinza */
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  font-size: 0.85rem;
+}
+
+form#comentarioForm {
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+textarea#comentarioInput {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #5d6d7e;
+  resize: vertical;
+  font-size: 0.9rem;
+  background-color: #2f3a4a;
+  color: #d0d7de;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+  font-family: inherit;
+}
+
+textarea#comentarioInput:focus {
+  outline: none;
+  border-color: #a6b1c2;
+  background-color: #3c4a63;
+  color: #e1e7f0;
+}
+
+button {
+  margin-top: 12px;
+  background-color: #5d6d7e;
+  color: #d0d7de;
+  border: none;
+  padding: 8px 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #7f8fa4;
+  color: #f0f4f8;
+}
+
+#comentariosContainer {
+  max-width: 350px;
+  margin: 18px auto 0;
+  background: #2f3a4a;
+  padding: 12px 15px;
+  border-radius: 10px;
+  height: 130px;
+  overflow-y: auto;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.25);
+  color: #c5cbd6;
+  font-size: 0.85rem;
+  text-align: left;
+}
+
+#comentariosContainer p {
+  border-bottom: 1px solid rgba(197, 203, 214, 0.3);
+  padding: 6px 0;
+  margin: 0;
+  word-wrap: break-word;
+}
+
+#comentariosContainer p:last-child {
+  border-bottom: none;
+}
