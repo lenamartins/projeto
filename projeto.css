@@ -356,7 +356,7 @@
     background-color: rgba(255, 255, 255, 0.3);
   }
 
-img {
+.card img {
   width: 200px;
   height: 150px;
   object-fit: cover;
