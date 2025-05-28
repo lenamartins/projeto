@@ -1,0 +1,408 @@
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  body {
+    background-color: #f0f8ff;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  /* Header styles */
+  header {
+    background: linear-gradient(90deg, #1a73e8, #1557b0);
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  header p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  /* Container styles */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  /* Filter bar styles */
+  .filter {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  .filter label {
+    font-weight: 600;
+    margin-right: 1rem;
+    color: #1a73e8;
+  }
+  
+  .filter select {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: white;
+    flex: 1;
+    min-width: 200px;
+  }
+  
+  .filter button {
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+  }
+  
+  .filter button:hover {
+    background-color: #1557b0;
+  }
+  
+  /* Card container styles */
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+  
+  /* Card styles */
+  .card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card h3 {
+    font-size: 1.3rem;
+    color: #1a73e8;
+    margin-bottom: 0.7rem;
+    padding: 1.2rem 1.2rem 0;
+  }
+  
+  .card p {
+    padding: 0 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #555;
+  }
+  
+  .card strong {
+    color: #333;
+  }
+  
+  .card button {
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    width: calc(100% - 2.4rem);
+    margin: 1.2rem;
+    padding: 0.7rem 0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+  }
+  
+  .card button:hover {
+    background-color: #1557b0;
+  }
+  
+  /* Modal styles */
+  .place-info {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+  }
+  
+  .place-info.show {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .place-info > * {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    animation: fadeIn 0.3s ease-out;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    color: #777;
+    cursor: pointer;
+  }
+  
+  .place-info h3 {
+    font-size: 1.8rem;
+    color: #1a73e8;
+    margin-bottom: 0.5rem;
+  }
+  
+  .place-info p {
+    margin-bottom: 0.5rem;
+    color: #555;
+  }
+  
+  .place-details {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 1.5rem 0;
+  }
+  
+  @media (min-width: 768px) {
+    .place-details {
+      flex-direction: row;
+    }
+    
+    .details-text {
+      flex: 1;
+    }
+    
+    .details-img {
+      flex: 1;
+    }
+  }
+  
+  .details-img img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .google-map-btn {
+    display: inline-block;
+    background: #1a73e8;
+    color: white;
+    padding: 0.7rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+    margin-top: 1rem;
+  }
+  
+  .google-map-btn:hover {
+    background: #1557b0;
+  }
+  
+  /* Event links */
+  .eventos {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  .eventos a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 500;
+    transition: all 0.2s;
+  }
+  
+  .eventos a:nth-child(1) {
+    background: #1557b0;
+    color: white;
+  }
+  
+  .eventos a:nth-child(2) {
+    background: #1557b0;
+    color: white;
+  }
+  
+  .eventos a:nth-child(3) {
+    background: #1557b0;
+    color: white;
+  }
+  
+  .eventos a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Accessibility highlights */
+  [data-accessibility="Cadeirante"]::before {
+    content: "♿";
+    margin-right: 0.3rem;
+  }
+  
+  [data-accessibility*="Visual"]::before {
+    content: "👁️";
+    margin-right: 0.3rem;
+  }
+  
+  [data-accessibility*="Auditivo"]::before {
+    content: "👂";
+    margin-right: 0.3rem;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    header h1 {
+      font-size: 2rem;
+    }
+    
+    .filter {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .filter label {
+      margin-bottom: 0.5rem;
+    }
+    
+    .filter select,
+    .filter button {
+      width: 100%;
+    }
+  }
+  
+  /* Accessibility improvements */
+  button, select, a {
+    outline: none;
+  }
+  
+  button:focus, select:focus, a:focus {
+    outline: 2px solid #1a73e8;
+    outline-offset: 2px;
+  }
+  
+  /* High contrast mode */
+  @media (prefers-contrast: high) {
+    body {
+      background: white;
+    }
+    
+    header {
+      background: black;
+    }
+    
+    .card {
+      border: 2px solid black;
+    }
+    
+    .card h3 {
+      color: black;
+    }
+    
+    button, .google-map-btn, .eventos a {
+      background: black !important;
+      color: white !important;
+    }
+  }
+
+
+  header {
+    background: linear-gradient(90deg, #1a73e8, #1557b0);
+    color: white;
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+  }
+  
+  
+  header p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 1.5rem auto 0;
+    text-align: center;
+  }
+  
+  .topo {
+    position: relative;
+  }
+  
+  .topo h1 {
+    text-align: center;
+  }
+  
+  .acesso {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  
+  .acesso a {
+    text-decoration: none;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin: 8px;
+  }
+  
+  .acesso a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  
