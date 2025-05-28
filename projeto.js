@@ -67,5 +67,34 @@ function showDetails(name, accessibility, address, rating, image, mapsUrl) {
       document.getElementById("erroSenha").style.display = "block";
     }
   }
-  
+  <script>
+  const form = document.getElementById('comentarioForm');
+  const input = document.getElementById('comentarioInput');
+  const container = document.getElementById('comentariosContainer');
+
+  function carregarComentarios() {
+    const comentarios = JSON.parse(localStorage.getItem('comentarios') || '[]');
+    container.innerHTML = '';
+    comentarios.forEach(c => {
+      const p = document.createElement('p');
+      p.textContent = c;
+      p.style.borderBottom = '1px solid #eee';
+      p.style.padding = '5px 0';
+      container.appendChild(p);
+    });
+  }
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const novoComentario = input.value.trim();
+    if (novoComentario) {
+      let comentarios = JSON.parse(localStorage.getItem('comentarios') || '[]');
+      comentarios.push(novoComentario);
+      localStorage.setItem('comentarios', JSON.stringify(comentarios));
+      input.value = '';
+      carregarComentarios();
+    }
+  });
+  carregarComentarios();
+</script>
   
