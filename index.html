@@ -138,6 +138,52 @@
         </div>
         <a id="googleMapsLink" class="google-map-btn" target="_blank">Ver no Google Maps</a>
     </div>
+<footer style="background-color:#f2f2f2; padding:20px; text-align:center;">
+  <p>&copy; 2025 Seu Nome ou Projeto. Todos os direitos reservados.</p>
+
+  <h3>Deixe um comentário:</h3>
+  <form id="comentarioForm" style="max-width: 400px; margin: auto;">
+    <textarea id="comentarioInput" rows="4" cols="40" placeholder="Escreva algo..." required
+              style="width: 100%; padding: 10px;"></textarea><br><br>
+    <button type="submit" style="padding: 10px 20px;">Enviar</button>
+  </form>
+
+  <h4>Comentários anteriores:</h4>
+  <div id="comentariosContainer" style="max-width: 400px; margin: auto; text-align: left; background:#fff; padding:10px; border-radius:5px; height:150px; overflow-y:auto; border:1px solid #ccc;">
+
+  </div>
+</footer>
+
+<script>
+  const form = document.getElementById('comentarioForm');
+  const input = document.getElementById('comentarioInput');
+  const container = document.getElementById('comentariosContainer');
+
+  function carregarComentarios() {
+    const comentarios = JSON.parse(localStorage.getItem('comentarios') || '[]');
+    container.innerHTML = '';
+    comentarios.forEach(c => {
+      const p = document.createElement('p');
+      p.textContent = c;
+      p.style.borderBottom = '1px solid #eee';
+      p.style.padding = '5px 0';
+      container.appendChild(p);
+    });
+  }
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const novoComentario = input.value.trim();
+    if (novoComentario) {
+      let comentarios = JSON.parse(localStorage.getItem('comentarios') || '[]');
+      comentarios.push(novoComentario);
+      localStorage.setItem('comentarios', JSON.stringify(comentarios));
+      input.value = '';
+      carregarComentarios();
+    }
+  });
+  carregarComentarios();
+</script>
 
 
     <script src="projeto.js">
