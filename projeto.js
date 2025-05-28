@@ -59,7 +59,7 @@ function showDetails(name, accessibility, address, rating, image, mapsUrl) {
 
   function verificarSenha() {
     const senha = document.getElementById("senhaAdmin").value;
-    const senhasValidas = ["lmaripera", "220908"]; // <- Aqui estão as senhas válidas
+    const senhasValidas = ["lmaripera", "220908"]; //senhas válidas
   
     if (senhasValidas.includes(senha)) {
       window.location.href = "cadastro.html";
