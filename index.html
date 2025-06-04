@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Locais Acessíveis - Blumenau</title>
-    <link rel="stylesheet" href="projeto.css">
+    <link rel="stylesheet" href="projeto.css" />
 </head>
-
 <body>
     <div id="loginModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color: rgba(0,0,0,0.5); z-index: 1000;">
-  <div style="background:white; padding:20px; margin: 100px auto; width:300px; border-radius:10px; text-align:center;">
-    <h2>Login de Administrador</h2>
-    <input type="password" id="senhaAdmin" placeholder="Digite a senha" style="width: 100%; padding: 10px; margin-top: 10px;">
-    <br><br>
-    <button onclick="verificarSenha()">Entrar</button>
-    <button onclick="fecharLogin()" style="margin-left: 10px;">Cancelar</button>
-    <p id="erroSenha" style="color: red; display: none;">Senha incorreta!</p>
-  </div>
-</div>
-  <header>
-    <div class="topo">
-      <h1>Locais Acessíveis em Blumenau</h1>
-      <div class="acesso"><a href="#" onclick="abrirLogin()">Acesso restrito</a></div>
+        <div style="background:white; padding:20px; margin: 100px auto; width:300px; border-radius:10px; text-align:center;">
+            <h2>Login de Administrador</h2>
+            <input type="password" id="senhaAdmin" placeholder="Digite a senha" style="width: 100%; padding: 10px; margin-top: 10px;" />
+            <br /><br />
+            <button onclick="verificarSenha()">Entrar</button>
+            <button onclick="fecharLogin()" style="margin-left: 10px;">Cancelar</button>
+            <p id="erroSenha" style="color: red; display: none;">Senha incorreta!</p>
+        </div>
     </div>
-    <p>Encontre os melhores locais acessíveis para pessoas com deficiência visual, auditiva, intelectual e psicossocial, pessoas cadeirantes</p>
-  </header>
-  
+
+    <header>
+        <div class="topo">
+            <h1>Locais Acessíveis em Blumenau</h1>
+            <div class="acesso"><a href="#" onclick="abrirLogin()">Acesso restrito</a></div>
+        </div>
+        <p>Encontre os melhores locais acessíveis para pessoas com deficiência visual, auditiva, intelectual e psicossocial, pessoas cadeirantes</p>
+    </header>
+
     <div class="container">
         <div class="filter">
             <label for="filter">Filtrar por tipo de acessibilidade:</label>
@@ -38,111 +38,112 @@
             <button onclick="sortTable()">Ordenar por Avaliação</button>
         </div>
 
-
-        
         <div class="cards-container">
-            <div class="card">
-              <h3>Parque Ramiro Ruediger</h3>
-                <div class="cards-img">
-              <img src="ramiro.png">
-                    <div class="cards-img">
-              <p><strong>Acessibilidade:</strong> Cadeirante, Deficiente Visual</p>
-              <p><strong>Endereço:</strong> Rua Alberto Stein, 416 - Velha</p>
-              <p><strong>Avaliação:</strong> 4.5</p>
-              <button onclick="showDetails('Parque Ramiro Ruediger', 'Cadeirante, Deficiente Visual', 'Rua Alberto Stein, 416 - Velha', '4.5', 'https://i.ytimg.com/vi/1PD8yadtzQk/maxresdefault.jpg', 'https://maps.app.goo.gl/t9gR5RietDNwqLvd7')">Ver Detalhes</button>
-            </div>
-          
-            <div class="card">
-              <h3>Neumarkt Shopping</h3>
-                <div class="cards-img">
-              <img src="new.png" >
-                    <div class="cards-img">
-              <p><strong>Acessibilidade:</strong> Cadeirante, Deficiente Auditivo</p>
-              <p><strong>Endereço:</strong> Rua Sete de Setembro, 1213 - Centro</p>
-              <p><strong>Avaliação:</strong> 4.7</p>
-              <button onclick="showDetails('Neumarkt Shopping', 'Cadeirante, Deficiente Auditivel', 'Rua Sete de Setembro, 1213 - Centro', '4.7', 'https://www.turismoblumenau.com.br/wp-content/uploads/2022/01/Design-sem-nome.png', 'https://maps.app.goo.gl/TyrWiQ9nooWd4SgC6')">Ver Detalhes</button>
-            </div>
-          
-            <div class="card">
-              <h3>Museu Hering</h3>
-                <div class="cards-img">
-              <img src="hering.png">
-                    <div class="cards-img">
-              <p><strong>Acessibilidade:</strong> Cadeirante</p>
-              <p><strong>Endereço:</strong> Rua Hermann Hering, 1740 - Bom Retiro</p>
-              <p><strong>Avaliação:</strong> 4.6</p>
-              <button onclick="showDetails('Museu Hering', 'Cadeirante', 'R. Hermann Hering, 1740 - Bom Retiro', '4.6', 'museuhering.jpg', 'https://maps.app.goo.gl/8WyfGrKkjsYHi8i38')">Ver Detalhes</button>
-            </div>
-          
-            <div class="card">
-              <h3>Vila Germânica</h3>
-                <div class="cards-img">
-              <img src="vilagermanica.png" >
-                    <div class="cards-img">
-              <p><strong>Acessibilidade:</strong> Cadeirante, Deficiente Visual</p>
-              <p><strong>Endereço:</strong> Rua Alberto Stein, 199 - Velha</p>
-              <p><strong>Avaliação:</strong> 4.8</p>
-              <button onclick="showDetails('Vila Germânica', 'Cadeirante, Deficiente Visual', 'Rua Alberto Stein, 199 - Velha', '4.8', 'vilagermanica.jpg', 'https://maps.app.goo.gl/DzULC8ASnWBf9DMH7')">Ver Detalhes</button>
-            </div>
-          
-            <div class="card">
-              <h3>Museu da família colonial</h3>
-                <div class="cards-img">
-              <img src="familiacolonial.png">
-                    <div class="cards-img">
-              <p><strong>Acessibilidade:</strong> Deficiente Visual, Cadeirante</p>
-              <p><strong>Endereço:</strong> Alameda Duque de Caxias 78, Centro</p>
-              <p><strong>Avaliação:</strong> 4.6</p>
-              <button onclick="showDetails('Museu da familia colonial', 'Deficiente Visual, Cadeirante', 'Alameda Duque de Caxias 78 - Centro' , '4.6', 'museufamilia.jpg', 'https://maps.app.goo.gl/rzAn6LsRkbo2oSaUA')">Ver Detalhes</button>
-            </div>
-          
-            <div class="card">
-              <h3>GNC Cinemas</h3>
-                <div class="cards-img">
-              <img src="gnc.png">
-                    <div class="cards-img">
-              <p><strong>Acessibilidade:</strong> Deficiente Visual, Cadeirante, Deficiente Auditivo</p>
-              <p><strong>Endereço:</strong> Shopping Neumarkt, Rua 7 de Setembro, 1213 - Loja 214 - Centro</p>
-              <p><strong>Avaliação:</strong> 4.5</p>
-              <button onclick="showDetails('GNC Cinemas', 'Deficiene Visual, Cadeirante, Deficiente Auditivo', 'Shopping Neumarkt, Rua 7 de Setembro, 1213 - Loja 214 - Centro', '4.5', 'GNC.jpg', 'https://maps.app.goo.gl/qiZqfwHpKdj5MTHL6')">Ver Detalhes</button>
-            </div>
-          
-            <div class="card">
-              <h3>Cinépolis</h3>
-                <div class="cards-img">
-              <img src="cinepolis.png">
-                    <div class="cards-img">
-              <p><strong>Acessibilidade:</strong> Deficiente Visual, Cadeirante, Deficiente Auditivo.</p>
-              <p><strong>Endereço:</strong> Norte Shopping, Rodovia BR 470, 3000, Salto Norte, Blumenau - SC</p>
-              <p><strong>Avaliação:</strong> 4.5</p>
-              <button onclick="showDetails('Cinépolis', 'Deficiente Visual, Cadeirante, Deficiente Audiivo', 'Norte Shopping, Rodovia BR 470, 3000, Salto Norte, Blumenau - SC', '4.5', 'Cinepolis.jpg', 'https://maps.app.goo.gl/JkUdGjxxa8zuadzE9')">Ver Detalhes</button>
-            </div>
-          
-            <div class="card">
-              <h3>Museu de Hábitos e Costumes</h3>
-                <div class="cards-img">
-              <img src="hec.png">
-                    <div class="cards-img">
-              <p><strong>Acessibilidade:</strong> Cadeirante</p>
-              <p><strong>Endereço:</strong> Rua XV de Novembro, 25 - Centro</p>
-              <p><strong>Avaliação:</strong> 4.3</p>
-              <button onclick="showDetails('Museu de Hábitos e Costumes', 'Cadeirante', 'Rua XV de Novembro, 25 - Centro' , '4.3', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQQo4v3L7qUx-WL_uXvxGuL4PzRN5eIxrCTA&s', 'https://maps.app.goo.gl/vbdKvJ5A4KtL6FBn8')">Ver Detalhes</button>
-            </div>
-          
-            <div class="card">
-              <h3>Teatro Carlos Gomes</h3>
-                <div class="cards-img">
-              <img src="carlosgomes.png">
-                    <div class="cards-img">
-              <p><strong>Acessibilidade:</strong> Cadeirante</p>
-              <p><strong>Endereço:</strong> R. XV de Novembro, 1181 - Centro</p>
-              <p><strong>Avaliação:</strong> 4.7</p>
-              <button onclick="showDetails('Teatro Carlos Gomes', 'Cadeirante', 'R. XV de Novembro, 1181 - Centro', '4.7', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAJ18NSd9ue6Yho4dwRuFhbWNM5Vpr4vUs_w&s', 'https://maps.app.goo.gl/5XYHGQu1ZgoTW2qS7')">Ver Detalhes</button>
-            </div>
-          </div>
-          
 
-    <div id="placeDetails" class="place-info">
+            <div class="card">
+                <h3>Parque Ramiro Ruediger</h3>
+                <div class="cards-img">
+                    <img src="ramiro.png" alt="Parque Ramiro Ruediger" />
+                </div>
+                <p><strong>Acessibilidade:</strong> Cadeirante, Deficiente Visual</p>
+                <p><strong>Endereço:</strong> Rua Alberto Stein, 416 - Velha</p>
+                <p><strong>Avaliação:</strong> 4.5</p>
+                <button onclick="showDetails('Parque Ramiro Ruediger', 'Cadeirante, Deficiente Visual', 'Rua Alberto Stein, 416 - Velha', '4.5', 'https://i.ytimg.com/vi/1PD8yadtzQk/maxresdefault.jpg', 'https://maps.app.goo.gl/t9gR5RietDNwqLvd7')">Ver Detalhes</button>
+            </div>
+
+            <div class="card">
+                <h3>Neumarkt Shopping</h3>
+                <div class="cards-img">
+                    <img src="new.png" alt="Neumarkt Shopping" />
+                </div>
+                <p><strong>Acessibilidade:</strong> Cadeirante, Deficiente Auditivo</p>
+                <p><strong>Endereço:</strong> Rua Sete de Setembro, 1213 - Centro</p>
+                <p><strong>Avaliação:</strong> 4.7</p>
+                <button onclick="showDetails('Neumarkt Shopping', 'Cadeirante, Deficiente Auditivo', 'Rua Sete de Setembro, 1213 - Centro', '4.7', 'https://www.turismoblumenau.com.br/wp-content/uploads/2022/01/Design-sem-nome.png', 'https://maps.app.goo.gl/TyrWiQ9nooWd4SgC6')">Ver Detalhes</button>
+            </div>
+
+            <div class="card">
+                <h3>Museu Hering</h3>
+                <div class="cards-img">
+                    <img src="hering.png" alt="Museu Hering" />
+                </div>
+                <p><strong>Acessibilidade:</strong> Cadeirante</p>
+                <p><strong>Endereço:</strong> Rua Hermann Hering, 1740 - Bom Retiro</p>
+                <p><strong>Avaliação:</strong> 4.6</p>
+                <button onclick="showDetails('Museu Hering', 'Cadeirante', 'R. Hermann Hering, 1740 - Bom Retiro', '4.6', 'museuhering.jpg', 'https://maps.app.goo.gl/8WyfGrKkjsYHi8i38')">Ver Detalhes</button>
+            </div>
+
+            <div class="card">
+                <h3>Vila Germânica</h3>
+                <div class="cards-img">
+                    <img src="vilagermanica.png" alt="Vila Germânica" />
+                </div>
+                <p><strong>Acessibilidade:</strong> Cadeirante, Deficiente Visual</p>
+                <p><strong>Endereço:</strong> Rua Alberto Stein, 199 - Velha</p>
+                <p><strong>Avaliação:</strong> 4.8</p>
+                <button onclick="showDetails('Vila Germânica', 'Cadeirante, Deficiente Visual', 'Rua Alberto Stein, 199 - Velha', '4.8', 'vilagermanica.jpg', 'https://maps.app.goo.gl/DzULC8ASnWBf9DMH7')">Ver Detalhes</button>
+            </div>
+
+            <div class="card">
+                <h3>Museu da família colonial</h3>
+                <div class="cards-img">
+                    <img src="familiacolonial.png" alt="Museu da Família Colonial" />
+                </div>
+                <p><strong>Acessibilidade:</strong> Deficiente Visual, Cadeirante</p>
+                <p><strong>Endereço:</strong> Alameda Duque de Caxias 78, Centro</p>
+                <p><strong>Avaliação:</strong> 4.6</p>
+                <button onclick="showDetails('Museu da familia colonial', 'Deficiente Visual, Cadeirante', 'Alameda Duque de Caxias 78 - Centro' , '4.6', 'museufamilia.jpg', 'https://maps.app.goo.gl/rzAn6LsRkbo2oSaUA')">Ver Detalhes</button>
+            </div>
+
+            <div class="card">
+                <h3>GNC Cinemas</h3>
+                <div class="cards-img">
+                    <img src="gnc.png" alt="GNC Cinemas" />
+                </div>
+                <p><strong>Acessibilidade:</strong> Deficiente Visual, Cadeirante, Deficiente Auditivo</p>
+                <p><strong>Endereço:</strong> Shopping Neumarkt, Rua 7 de Setembro, 1213 - Loja 214 - Centro</p>
+                <p><strong>Avaliação:</strong> 4.5</p>
+                <button onclick="showDetails('GNC Cinemas', 'Deficiente Visual, Cadeirante, Deficiente Auditivo', 'Shopping Neumarkt, Rua 7 de Setembro, 1213 - Loja 214 - Centro', '4.5', 'GNC.jpg', 'https://maps.app.goo.gl/qiZqfwHpKdj5MTHL6')">Ver Detalhes</button>
+            </div>
+
+            <div class="card">
+                <h3>Cinépolis</h3>
+                <div class="cards-img">
+                    <img src="cinepolis.png" alt="Cinépolis" />
+                </div>
+                <p><strong>Acessibilidade:</strong> Deficiente Visual, Cadeirante, Deficiente Auditivo.</p>
+                <p><strong>Endereço:</strong> Norte Shopping, Rodovia BR 470, 3000, Salto Norte, Blumenau - SC</p>
+                <p><strong>Avaliação:</strong> 4.5</p>
+                <button onclick="showDetails('Cinépolis', 'Deficiente Visual, Cadeirante, Deficiente Auditivo', 'Norte Shopping, Rodovia BR 470, 3000, Salto Norte, Blumenau - SC', '4.5', 'Cinepolis.jpg', 'https://maps.app.goo.gl/JkUdGjxxa8zuadzE9')">Ver Detalhes</button>
+            </div>
+
+            <div class="card">
+                <h3>Museu de Hábitos e Costumes</h3>
+                <div class="cards-img">
+                    <img src="hec.png" alt="Museu de Hábitos e Costumes" />
+                </div>
+                <p><strong>Acessibilidade:</strong> Cadeirante</p>
+                <p><strong>Endereço:</strong> Rua XV de Novembro, 25 - Centro</p>
+                <p><strong>Avaliação:</strong> 4.3</p>
+                <button onclick="showDetails('Museu de Hábitos e Costumes', 'Cadeirante', 'Rua XV de Novembro, 25 - Centro' , '4.3', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQQo4v3L7qUx-WL_uXvxGuL4PzRN5eIxrCTA&s', 'https://maps.app.goo.gl/vbdKvJ5A4KtL6FBn8')">Ver Detalhes</button>
+            </div>
+
+            <div class="card">
+                <h3>Teatro Carlos Gomes</h3>
+                <div class="cards-img">
+                    <img src="carlosgomes.png" alt="Teatro Carlos Gomes" />
+                </div>
+                <p><strong>Acessibilidade:</strong> Cadeirante</p>
+                <p><strong>Endereço:</strong> R. XV de Novembro, 1181 - Centro</p>
+                <p><strong>Avaliação:</strong> 4.7</p>
+                <button onclick="showDetails('Teatro Carlos Gomes', 'Cadeirante', 'R. XV de Novembro, 1181 - Centro', '4.7', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAJ18NSd9ue6Yho4dwRuFhbWNM5Vpr4vUs_w&s', 'https://maps.app.goo.gl/5XYHGQu1ZgoTW2qS7')">Ver Detalhes</button>
+            </div>
+
+        </div> <!-- fim cards-container -->
+
+    </div> <!-- fim container -->
+
+    <div id="placeDetails" class="place-info" style="display:none;">
         <button class="close-btn" onclick="closeDetails()">X</button>
         <h3 id="placeName"></h3>
         <p id="placeAccessibility"></p>
@@ -153,16 +154,12 @@
                 <p><strong>Tipo de Acessibilidade:</strong> <span id="placeType"></span></p>
             </div>
             <div class="details-img">
-                <img id="placeImage" src="" alt="Imagem do local">
+                <img id="placeImage" src="" alt="Imagem do local" />
             </div>
         </div>
-        <a id="googleMapsLink" class="google-map-btn" target="_blank">Ver no Google Maps</a>
-  </div>
+        <a id="googleMapsLink" class="google-map-btn" target="_blank" href="">Ver no Google Maps</a>
+    </div>
 
-</footer>
-
-
-    <script src="projeto.js">
-    </script>
+    <script src="projeto.js"></script>
 </body>
 </html>
