@@ -1,39 +1,60 @@
-function showDetails(name, accessibility, address, rating, image, mapsUrl) {
-    const detailsEl = document.getElementById("placeDetails");
+document.addEventListener("DOMContentLoaded", function () {
+    // Mostrar detalhes
+    window.showDetails = function (name, accessibility, address, rating, image, mapsUrl) {
+        const detailsEl = document.getElementById("placeDetails");
 
-    document.getElementById("placeName").textContent = name;
-    document.getElementById("placeAccessibility").textContent = `Acessibilidade: ${accessibility}`;
-    document.getElementById("placeAddress").textContent = address;
-    document.getElementById("placeRating").textContent = rating;
-    document.getElementById("placeType").textContent = accessibility;
-    document.getElementById("placeImage").src = image;
-    document.getElementById("googleMapsLink").href = mapsUrl;
+        document.getElementById("placeName").textContent = name;
+        document.getElementById("placeAccessibility").textContent = `Acessibilidade: ${accessibility}`;
+        document.getElementById("placeAddress").textContent = address;
+        document.getElementById("placeRating").textContent = rating;
+        document.getElementById("placeType").textContent = accessibility;
+        document.getElementById("placeImage").src = image;
+        document.getElementById("googleMapsLink").href = mapsUrl;
 
-    detailsEl.style.display = "block";
-}
+        detailsEl.style.display = "block";
+    };
 
-function closeDetails() {
-    const detailsEl = document.getElementById("placeDetails");
-    detailsEl.style.display = "none";
-}
+    window.closeDetails = function () {
+        document.getElementById("placeDetails").style.display = "none";
+    };
 
-function sortTable() {
-    const container = document.querySelector(".cards-container");
-    const cards = Array.from(container.querySelectorAll(".card"));
+    window.abrirLogin = function () {
+        document.getElementById("loginModal").style.display = "block";
+    };
 
-    cards.sort((a, b) => {
-        const ratingA = parseFloat(a.querySelector("p:nth-of-type(3)").textContent.split(":")[1].trim());
-        const ratingB = parseFloat(b.querySelector("p:nth-of-type(3)").textContent.split(":")[1].trim());
-        return ratingB - ratingA;
-    });
+    window.fecharLogin = function () {
+        document.getElementById("loginModal").style.display = "none";
+        document.getElementById("erroSenha").style.display = "none";
+        document.getElementById("senhaAdmin").value = "";
+    };
 
-    container.innerHTML = "";
-    cards.forEach(card => container.appendChild(card));
-}
+    window.verificarSenha = function () {
+        const senha = document.getElementById("senhaAdmin").value;
+        const senhasValidas = ["lmaripera", "220908"];
+        if (senhasValidas.includes(senha)) {
+            window.location.href = "cadastro.html";
+        } else {
+            document.getElementById("erroSenha").style.display = "block";
+        }
+    };
 
-document.addEventListener("DOMContentLoaded", () => {
+    // Ordenar por avaliação
+    window.sortTable = function () {
+        const container = document.querySelector(".cards-container");
+        const cards = Array.from(container.querySelectorAll(".card"));
+
+        cards.sort((a, b) => {
+            const ratingA = parseFloat(a.querySelector("p:nth-of-type(3)").textContent.split(":")[1].trim());
+            const ratingB = parseFloat(b.querySelector("p:nth-of-type(3)").textContent.split(":")[1].trim());
+            return ratingB - ratingA;
+        });
+
+        container.innerHTML = "";
+        cards.forEach(card => container.appendChild(card));
+    };
+
+    // Filtro por tipo de acessibilidade
     const filterSelect = document.getElementById("filter");
-
     if (filterSelect) {
         filterSelect.addEventListener("change", function () {
             const filter = this.value.toLowerCase();
@@ -50,24 +71,3 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
-
-function abrirLogin() {
-    document.getElementById("loginModal").style.display = "block";
-}
-
-function fecharLogin() {
-    document.getElementById("loginModal").style.display = "none";
-    document.getElementById("erroSenha").style.display = "none";
-    document.getElementById("senhaAdmin").value = "";
-}
-
-function verificarSenha() {
-    const senha = document.getElementById("senhaAdmin").value;
-    const senhasValidas = ["lmaripera", "220908"]; // senhas válidas
-
-    if (senhasValidas.includes(senha)) {
-        window.location.href = "cadastro.html";
-    } else {
-        document.getElementById("erroSenha").style.display = "block";
-    }
-}
