@@ -1,6 +1,5 @@
-// Tudo dentro do DOMContentLoaded
 document.addEventListener("DOMContentLoaded", function () {
-    // Funções acessíveis no HTML
+    
     window.showDetails = function (name, accessibility, address, rating, image, mapsUrl) {
         const detailsEl = document.getElementById("placeDetails");
 
@@ -54,7 +53,6 @@ document.addEventListener("DOMContentLoaded", function () {
         cards.forEach(card => container.appendChild(card));
     };
 
-    // Filtro por tipo de acessibilidade
     const filterSelect = document.getElementById("filter");
 
     if (filterSelect) {
