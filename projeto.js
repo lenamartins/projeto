@@ -1,5 +1,6 @@
+// Tudo dentro do DOMContentLoaded
 document.addEventListener("DOMContentLoaded", function () {
-    // Mostrar detalhes
+    // Funções acessíveis no HTML
     window.showDetails = function (name, accessibility, address, rating, image, mapsUrl) {
         const detailsEl = document.getElementById("placeDetails");
 
@@ -31,6 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
     window.verificarSenha = function () {
         const senha = document.getElementById("senhaAdmin").value;
         const senhasValidas = ["lmaripera", "220908"];
+
         if (senhasValidas.includes(senha)) {
             window.location.href = "cadastro.html";
         } else {
@@ -38,7 +40,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     };
 
-    // Ordenar por avaliação
     window.sortTable = function () {
         const container = document.querySelector(".cards-container");
         const cards = Array.from(container.querySelectorAll(".card"));
@@ -55,6 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Filtro por tipo de acessibilidade
     const filterSelect = document.getElementById("filter");
+
     if (filterSelect) {
         filterSelect.addEventListener("change", function () {
             const filter = this.value.toLowerCase();
